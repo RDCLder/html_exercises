@@ -11,35 +11,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
 
-    #backgroundVideo {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%; 
+    header {
+      position: relative;
+      background-color: black;
+      height: 75vh;
+      min-height: 25rem;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    header video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
       min-height: 100%;
       width: auto;
       height: auto;
-      z-index: -1;
-      /* filter:opacity(80%); */
+      z-index: 0;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
     }
 
-    .content {
-      position: fixed;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: #f1f1f1;
-      height: 200px;
-      width: 500px;
-      border-radius: 50%;
-      padding: 20px;
+    header .container {
+      position: relative;
+      z-index: 2;
     }
 
-    h1 {
-      font-size: 100px;
+    header .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      opacity: 0.5;
+      z-index: 1;
     }
 
-    p {
-      font-size: 30px;
+    @media (pointer: coarse) and (hover: none) {
+      header {
+        background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+      }
+      header video {
+        display: none;
+      }
     }
 
     </style>
@@ -47,48 +65,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-      
-    <div class="container">
 
-      <div class="row justify-content-md-center align-content-md-center">
-      <video autoplay muted loop id = "backgroundVideo" style = "opacity: 70%;">
-        <source src = "media/backgroundVideo.mp4" type = "video/mp4">
+    <div class="row justify-content-md-center" style = "margin: 40px;">
+      <img src="media/logo.png">
+    </div>
+
+    <header>
+      <div class="overlay"></div>
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="media/backgroundVideo.mp4" type="video/mp4">
       </video>
-
-      <div class="content" style = "text-align: center;">
-        <h1>DaDong NYC</h1>
-        <p>Experience the Best of China</p>
-      </div>
-      </div>
-        
-      <!-- <nav class="navbar navbar-expand-sm|md|lg|-xl navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="#">Action 1</a>
-                <a class="dropdown-item" href="#">Action 2</a>
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+      <div class="container h-100">
+        <div class="d-flex text-center h-100">
+          <div class="my-auto w-100 text-white">
+            <h1 class="display-3">EXPERIENCE THE BEST OF CHINA</h1>
+          </div>
         </div>
-      </nav> -->
+      </div>
+    </header>
+
+    <div class="container" style = "border: solid black; margin-top: 20px;">
+
+      <ul id="nav" class="menu"><li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://www.dadongny.com/reservations/">Reservations</a></li>
+        <li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="http://www.dadongny.com/about/">About</a></li>
+        <li id="menu-item-428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-428"><a href="http://www.dadongny.com/alacarte/">Menus</a></li>
+        <li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"><a href="http://www.dadongny.com/chef-dong/">Chef Dong</a></li>
+        <li id="menu-item-100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100"><a href="http://www.dadongny.com/events/">Events</a></li>
+        <li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://www.dadongny.com/press/">Press</a></li>
+        <li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a href="http://www.dadongny.com/contact/">Contact &amp; Location</a></li>
+        <li id="menu-item-245" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-245"><a href="http://www.dadongny.com/careers/">Careers</a></li>
+      </ul>
 
     </div>
 
